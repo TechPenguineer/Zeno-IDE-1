@@ -36,8 +36,8 @@ Zeno INC. Founded in 2021 by developer Tech Penguineer is a software development
 
 [Tech Penguineer](https://github.com/TechPenguineer) - Founder & CEO
 
-[VoidyCD](https://github.com/VoidyCD) - Head of manager staff / COO
+[VoidyCD](https://github.com/VoidyCD) - Head of managing staff / COO
 
-[Alvin Thorn](https://github.com/AlvinThorn008) - Head engineer 
+[Alvin Thorn](https://github.com/AlvinThorn008) - Head software engineer 
 
 [Hyooz](https://www.youtube.com/channel/UC55Qio5fOoPuz0JbpGURUjw) - Head Graphic Designer
