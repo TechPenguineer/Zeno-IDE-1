@@ -32,7 +32,16 @@ An ide is a integrated development environment. This is basically a file/text ed
 ## Who is Zeno INC?
 Zeno INC. Founded in 2021 by developer Tech Penguineer is a software development organization where developers come together to make life easier for other programmers.
 
-## Contributors
+
+# Project
+## Project Status
+- Developer Recruitment - ✔️
+- Logo design - ✔️
+- Main Software - ⌛
+<br>
+<br>
+
+# Contributors
 
 [Tech Penguineer](https://github.com/TechPenguineer) - Founder & CEO
 
