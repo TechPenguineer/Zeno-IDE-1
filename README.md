@@ -10,6 +10,34 @@
     <img src="https://img.shields.io/github/commit-activity/m/Techpenguineer/Dunamis">
     <img src="https://img.shields.io/github/contributors/ZenoINC/Zeno-IDE">
 </p>
+<hr>
 
+# Contents
 
+- [About](#about)
+- - [What is an IDE?](#what-is-an-ide)
+- - [Who is Zeno INC?](#who-is-zeno-inc)
+- - - [Who are the people apart of Zeno INC?](#contributors)
+- [Project](#project)
+- - [Status](#project-development-status)
 
+<br>
+
+# About
+ Zeno is an open source IDE with a Language Protocol Server, customizable ui, plugins, plugin builders **(PRO FEATURE)** where you can write, and collaborate on code!
+
+## What is an IDE?
+An ide is a integrated development environment. This is basically a file/text editor with other features! 
+
+## Who is Zeno INC?
+Zeno INC. Founded in 2021 by developer Tech Penguineer is a software development organization where developers come together to make life easier for other programmers.
+
+## Contributors
+
+[Tech Penguineer](https://github.com/TechPenguineer) - Founder & CEO
+
+[VoidyCD](https://github.com/VoidyCD) - Head of manager staff / COO
+
+[Alvin Thorn](https://github.com/AlvinThorn008) - Head engineer 
+
+[Hyooz](https://www.youtube.com/channel/UC55Qio5fOoPuz0JbpGURUjw) - Head Graphic Designer
