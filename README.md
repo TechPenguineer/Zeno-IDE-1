@@ -39,7 +39,6 @@ Zeno INC. Founded in 2021 by developer Tech Penguineer is a software development
 - Logo design - ✔️
 - Main Software - ⌛
 <br>
-<br>
 
 # Contributors
 
