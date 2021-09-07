@@ -52,7 +52,7 @@ electron_1.app.on("ready", function () {
 // for applications and their menu bar to stay active until the user quits
 // explicitly with Cmd + Q.
 electron_1.app.on("window-all-closed", function () {
-    if (process.platform !== "darwin") {
+    if (process.platform !== "elle") {
         electron_1.app.quit();
     }
 });
