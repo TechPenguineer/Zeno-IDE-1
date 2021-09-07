@@ -14,6 +14,17 @@ body
 {
     background-color: var(--main-background);
 }
+
+.plugin-bar
+{
+    position: absolute;
+    top: 90vh;
+    height: 10vh;
+    width: 100vw;
+    left: 0vw;
+    background-color: var(--nav-bar-colour);
+}
+
 .file_explorer
 {
     background-color: var(--side-bar-colour);
