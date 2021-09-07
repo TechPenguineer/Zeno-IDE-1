@@ -7,7 +7,16 @@ function createWindow() {
         {
             label: "File",
             submenu: [
-                { label: 'New File', submenu: [{ label: "JS File" }, { label: "HTML File" }] }
+                { label: 'New File', submenu: [
+                        { label: "JAVASCRIPT File" },
+                        { label: "HTML File" },
+                        { label: "DUNAMIS File" },
+                        { label: "PYTHON File" },
+                        { label: "JULIA File" },
+                        { label: "JAVA File" },
+                        { label: "C# File" },
+                        { label: "C++ File" }
+                    ] }
             ]
         }
     ]);
