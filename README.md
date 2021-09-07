@@ -30,7 +30,7 @@
 An ide is a integrated development environment. This is basically a file/text editor with other features! 
 
 ## Who is Zeno INC?
-Zeno INC. Founded in 2021 by developer Tech Penguineer And Voidy, its a professional software development organization where developers come together to make life easier for other programmers.
+Zeno INC. Founded in 2021 by developer Tech Penguineer And Pure Voidy, its a professional software development organization where developers come together to make life easier for other programmers.
 
 
 # Project
