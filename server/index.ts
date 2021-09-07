@@ -1,30 +1,41 @@
-import { BrowserWindow } from 'electron';
+import { app, BrowserWindow } from "electron";
+import * as path from "path";
 
-export default class Main {
-    static mainWindow: Electron.BrowserWindow;
-    static application: Electron.App;
-    static BrowserWindow;
-    private static onWindowAllClosed() {
-        if (process.platform !== 'darwin') {
-            Main.application.quit();
-        }
-    }
+function createWindow() {
+  // Create the browser window.
+  const mainWindow = new BrowserWindow({
+    height: 600,
+    webPreferences: {
+      preload: path.join(__dirname, "preload.js"),
+    },
+    width: 800,
+  });
 
-    private static onClose() {
-        Main.mainWindow = null;
-    }
+  // and load the index.html of the app.
+  mainWindow.loadFile(path.join(__dirname, "../index.html"));
 
-    private static onReady() {
-        Main.mainWindow = new Main.BrowserWindow({ width: 800, height: 600 });
-        Main.mainWindow
-            .loadURL('../frontend/index.html');
-        Main.mainWindow.on('closed', Main.onClose);
-    }
-
-    static main(app: Electron.App, browserWindow: typeof BrowserWindow) {
-        Main.BrowserWindow = browserWindow;
-        Main.application = app;
-        Main.application.on('window-all-closed', Main.onWindowAllClosed);
-        Main.application.on('ready', Main.onReady);
-    }
+  // Open the DevTools.
+  mainWindow.webContents.openDevTools();
 }
+
+// This method will be called when Electron has finished
+// initialization and is ready to create browser windows.
+// Some APIs can only be used after this event occurs.
+app.on("ready", () => {
+  createWindow();
+
+  app.on("activate", function () {
+    // On macOS it's common to re-create a window in the app when the
+    // dock icon is clicked and there are no other windows open.
+    if (BrowserWindow.getAllWindows().length === 0) createWindow();
+  });
+});
+
+// Quit when all windows are closed, except on macOS. There, it's common
+// for applications and their menu bar to stay active until the user quits
+// explicitly with Cmd + Q.
+app.on("window-all-closed", () => {
+  if (process.platform !== "darwin") {
+    app.quit();
+  }
+});
