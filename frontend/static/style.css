@@ -1,0 +1,14 @@
+@font-face {
+  font-family: "Ubuntu", sans-serif;
+  src: url("../fonts/Ubuntu-Light.ttf");
+  font-weight: bold;
+}
+
+body {
+  font-family: georgia;
+  color: black;
+}
+h1 {
+  font-family: "Ubuntu", sans-serif;
+  color: black;
+}
