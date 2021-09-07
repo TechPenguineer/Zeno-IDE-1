@@ -1,0 +1,14 @@
+@font-face {
+  font-family: "Roboto Mono", monospace;
+  src: url(".../fonts/RobotoMono-VariableFont_wght.ttf");
+  font-weight: bold;
+}
+
+body {
+  font-family: georgia;
+  color: black;
+}
+h1 {
+  font-family: "Roboto Mono", monospace;
+  color: black;
+}

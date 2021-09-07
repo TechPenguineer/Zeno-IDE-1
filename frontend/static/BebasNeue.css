@@ -1,0 +1,14 @@
+@font-face {
+  font-family: "Bebas Neue", cursive;
+  src: url(".../fonts/BebasNeue.ttf");
+  font-weight: bold;
+}
+
+body {
+  font-family: georgia;
+  color: black;
+}
+h1 {
+  font-family: "Bebas Neue", cursive;
+  color: black;
+}

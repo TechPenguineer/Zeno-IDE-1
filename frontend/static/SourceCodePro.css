@@ -1,0 +1,16 @@
+@font-face {
+  font-family: "Roboto Mono", monospace;
+  font-family: "Source Sans Pro", sans-serif;
+  src: url(".../fonts/SourceCodePro-Black.ttf");
+  font-weight: bold;
+}
+
+body {
+  font-family: georgia;
+  color: black;
+}
+h1 {
+  font-family: "Roboto Mono", monospace;
+  font-family: "Source Sans Pro", sans-serif;
+  color: black;
+}
