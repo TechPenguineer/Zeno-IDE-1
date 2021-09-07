@@ -16,7 +16,9 @@ function createWindow() {
           {label: "JULIA File"}, 
           {label: "JAVA File"}, 
           {label: "C# File"}, 
-          {label: "C++ File"}]}
+          {label: "C++ File"}]
+        }
+        
         ]
       }
     ])
