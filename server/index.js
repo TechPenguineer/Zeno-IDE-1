@@ -5,7 +5,7 @@ var path = require("path");
 function createWindow() {
     var menu = electron_1.Menu.buildFromTemplate([
         {
-            label: "Test",
+            label: "File",
             submenu: [
                 { label: 'New File', submenu: [{ label: "JS File" }, { label: "HTML File" }] }
             ]
