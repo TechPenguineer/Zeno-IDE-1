@@ -2,9 +2,12 @@
   "name": "Zeno-IDE",
   "version": "1.0.0",
   "description": "<p align=\"center\">     <img align=\"center\" src=\"icons/logo.png\" width=400px>     <h1 align=\"center\"> Zeno Ide </h1>     <h3 align=\"center\">  Version 0.0.1 - Alpha 1</h3> </p>",
-  "main": "index.js",
+  "main": "i./server/ndex.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start:dev": "electron server/index.js",
+    "build:dev": "./scripts/compile_to_js.sh",
+    "all:dev":"npm run build:dev && npm run start:dev",
+    "user:test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
