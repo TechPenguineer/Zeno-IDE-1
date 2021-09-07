@@ -3,19 +3,31 @@ exports.__esModule = true;
 var electron_1 = require("electron");
 var path = require("path");
 function createWindow() {
-    // Create the browser window.
+    var menu = electron_1.Menu.buildFromTemplate([
+        {
+            label: "Test",
+            submenu: [
+                { label: 'New File', submenu: [{ label: "JS File" }, { label: "HTML File" }] }
+            ]
+        }
+    ]);
+    electron_1.Menu.setApplicationMenu(menu);
     var mainWindow = new electron_1.BrowserWindow({
         height: 600,
+        title: "Zeno",
         webPreferences: {
             preload: path.join(__dirname, "preload.js")
         },
         width: 800
     });
     // and load the index.html of the app.
-    mainWindow.loadFile(path.join(__dirname, "../frontend/index.html"));
+    mainWindow.loadFile(path.join(__dirname, "../index.html"));
     // Open the DevTools.
     mainWindow.webContents.openDevTools();
 }
+// This method will be called when Electron has finished
+// initialization and is ready to create browser windows.
+// Some APIs can only be used after this event occurs.
 electron_1.app.on("ready", function () {
     createWindow();
     electron_1.app.on("activate", function () {

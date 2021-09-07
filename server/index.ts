@@ -1,10 +1,24 @@
-import { app, BrowserWindow } from "electron";
+import { app, BrowserWindow, ipcMain, Menu } from "electron";
 import * as path from "path";
 
 function createWindow() {
-  // Create the browser window.
+
+  var menu = Menu.buildFromTemplate(
+    [
+      {
+        label: "Test",
+        submenu: [
+          {label:'New File', submenu:[{label:"JS File"},{label: "HTML File"}]}
+        ]
+      }
+    ])
+
+    Menu.setApplicationMenu(menu);
+
   const mainWindow = new BrowserWindow({
     height: 600,
+    title: "Zeno",
+    
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
     },
@@ -12,7 +26,7 @@ function createWindow() {
   });
 
   // and load the index.html of the app.
-  mainWindow.loadFile(path.join(__dirname, "../index.html"));
+  mainWindow.loadFile(path.join(__dirname, "../frontend"));
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools();
