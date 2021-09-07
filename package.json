@@ -5,7 +5,7 @@
   "main": "i./server/ndex.js",
   "scripts": {
     "start:dev": "electron server/index.js",
-    "build:dev": "./scripts/compile_to_js.sh",
+    "build": "tsc ./server/index.ts && tsc ./server/preload.ts &&  tsc ./server/renderer.ts    ",
     "all:dev":"npm run build:dev && npm run start:dev",
     "user:test": "echo \"Error: no test specified\" && exit 1"
   },
