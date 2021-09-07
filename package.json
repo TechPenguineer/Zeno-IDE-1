@@ -1,0 +1,20 @@
+{
+  "name": "Zeno-IDE",
+  "version": "1.0.0",
+  "description": "<p align=\"center\">     <img align=\"center\" src=\"icons/logo.png\" width=400px>     <h1 align=\"center\"> Zeno Ide </h1>     <h3 align=\"center\">  Version 0.0.1 - Alpha 1</h3> </p>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TechPenguineer/Zeno-IDE.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TechPenguineer/Zeno-IDE/issues"
+  },
+  "homepage": "https://github.com/TechPenguineer/Zeno-IDE#readme"
+}
