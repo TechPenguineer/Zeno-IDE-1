@@ -2,58 +2,22 @@
 exports.__esModule = true;
 var electron_1 = require("electron");
 var path = require("path");
-var fs = require('fs');
-
-
-const pathfile = "../fileoutput/result"
-
-
 function createWindow() {
     var menu = electron_1.Menu.buildFromTemplate([
         {
             label: "File",
             submenu: [
                 { label: 'New File', submenu: [
-                        { label: "JAVASCRIPT File" ,
-
-
-                    click(){
-
-
-
-                    
-                        fs.writeFileSync(path.join(__dirname,"../fileoutput","result.js"), '//Write Some Juciy Code Here :)'
-                        ,"UTF8")
-                    }},
-
-
-
-                        { label: "HTML File" ,
-                         
-                        click(){
-
-
-
-                    
-                            fs.writeFileSync(path.join(__dirname,"../fileoutput","result.html"), '<!--Write Some Juciy Code Here :)-->'
-                            ,"UTF8")
-                        }},
+                        { label: "JAVASCRIPT File" },
+                        { label: "HTML File" },
                         { label: "DUNAMIS File" },
-                        { label: "PYTHON File" ,
-                         
-                        click(){
-
-
-
-                    
-                            fs.writeFileSync(path.join(__dirname,"../fileoutput","result.py"), '#Write Some Juciy Code Here :)'
-                            ,"UTF8")
-                        }},
+                        { label: "PYTHON File" },
                         { label: "JULIA File" },
                         { label: "JAVA File" },
                         { label: "C# File" },
                         { label: "C++ File" }
-                    ] }
+                    ]
+                }
             ]
         }
     ]);
@@ -89,7 +53,8 @@ electron_1.app.on("ready", function () {
 // for applications and their menu bar to stay active until the user quits
 // explicitly with Cmd + Q.
 electron_1.app.on("window-all-closed", function () {
-    if (process.platform !== "elle") {
+    if (process.platform !== "darwin") {
         electron_1.app.quit();
     }
 });
+//# sourceMappingURL=index.js.map
