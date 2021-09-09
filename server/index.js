@@ -8,7 +8,14 @@ function createWindow() {
             label: "File",
             submenu: [
                 { label: 'New File', submenu: [
-                        { label: "JAVASCRIPT File" },
+                        { label: "Javascript", submenu: [
+                                {
+                                    label: "Node.JS File"
+                                },
+                                {
+                                    label: "Web-based file"
+                                }
+                            ] },
                         { label: "Web Types", submenu: [
                                 { label: "EJS" },
                                 { label: "HTML" }
@@ -45,10 +52,55 @@ function createWindow() {
                                     label: "Empty Class"
                                 }
                             ] },
-                        { label: "C# File" },
-                        { label: "C++ File" }
+                        { label: "C#", submenu: [
+                                {
+                                    label: "Empty File"
+                                },
+                                {
+                                    label: "Empty Class"
+                                }
+                            ] },
+                        { label: "C++", submenu: [
+                                {
+                                    label: "Empty File"
+                                },
+                                {
+                                    label: "Empty Class"
+                                }
+                            ] }
+                    ]
+                },
+                {
+                    label: "Generate", submenu: [
+                        {
+                            label: "Makefile", submenu: [
+                                { label: "gcc" },
+                                { label: "g++" }
+                            ]
+                        },
+                        {
+                            label: "Zeno Folder"
+                        }
                     ]
                 }
+            ]
+        },
+        {
+            label: 'Edit',
+            submenu: [
+                { role: 'undo' },
+                { role: 'redo' },
+                { type: 'separator' },
+                { role: 'cut' },
+                { role: 'copy' },
+                { role: 'paste' },
+                { role: 'pasteAndMatchStyle' },
+                { role: 'delete' },
+                { role: 'selectAll' },
+                { type: 'separator' },
+                { role: 'delete' },
+                { type: 'separator' },
+                { role: 'selectAll' }
             ]
         }
     ]);
