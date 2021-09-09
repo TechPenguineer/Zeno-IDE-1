@@ -2,12 +2,6 @@
 exports.__esModule = true;
 var electron_1 = require("electron");
 var path = require("path");
-var fs = require('fs');
-
-
-const pathfile = "../fileoutput/result"
-
-
 function createWindow() {
     var menu = electron_1.Menu.buildFromTemplate([
         {
@@ -15,42 +9,11 @@ function createWindow() {
             submenu: [
                 { label: 'New File', submenu: [
                         { label: "JAVASCRIPT File" },
-                        { label: "Web Types", submenu: [
-                                { label: "EJS" },
-                                { label: "HTML" }
-                            ] },
-                        { label: "Dunamis", submenu: [
-                                { label: "Blank File" },
-                                { label: "Function Template" }
-                            ] },
-                        { label: "Python", submenu: [
-                                { label: "Empty Class" },
-                                { label: "Empty Project" },
-                                { label: "Empty File" }
-                            ] },
-                        { label: "Julia", submenu: [
-                                {
-                                    label: "Empty File"
-                                },
-                                {
-                                    label: "Template File"
-                                },
-                                {
-                                    label: "Template Project"
-                                }
-                            ] },
-                        { label: "Java", submenu: [
-                                {
-                                    label: "Library Templates", submenu: [
-                                        {
-                                            label: "JFrame"
-                                        }
-                                    ]
-                                },
-                                {
-                                    label: "Empty Class"
-                                }
-                            ] },
+                        { label: "HTML File" },
+                        { label: "DUNAMIS File" },
+                        { label: "PYTHON File" },
+                        { label: "JULIA File" },
+                        { label: "JAVA File" },
                         { label: "C# File" },
                         { label: "C++ File" }
                     ]
@@ -94,3 +57,4 @@ electron_1.app.on("window-all-closed", function () {
         electron_1.app.quit();
     }
 });
+//# sourceMappingURL=index.js.map

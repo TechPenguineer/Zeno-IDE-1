@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "<p align=\"center\">     <img align=\"center\" src=\"icons/logo.png\" width=400px>     <h1 align=\"center\"> Zeno Ide </h1>     <h3 align=\"center\">  Version 0.0.1 - Alpha 1</h3> </p>",
   "main": "i./server/ndex.js",
+  
   "scripts": {
     "start:dev": "electron server/index.js",
     "build": "tsc ./server/index.ts && tsc ./server/preload.ts &&  tsc ./server/renderer.ts    ",
@@ -21,6 +22,8 @@
   },
   "homepage": "https://github.com/TechPenguineer/Zeno-IDE#readme",
   "dependencies": {
-    "electron": "^14.0.0"
-  }
+    "electron": "^14.0.0",
+    "typescript": "^4.4.2"
+  },
+  "devDependencies": {}
 }
