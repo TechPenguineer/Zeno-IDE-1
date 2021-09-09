@@ -1,7 +1,9 @@
 "use strict";
 exports.__esModule = true;
 var electron_1 = require("electron");
+const {app,BrowserWindow,Menu,ipcMain} = electron_1
 var path = require("path");
+var fs = require('fs');
 function createWindow() {
     var menu = electron_1.Menu.buildFromTemplate([
         {
@@ -88,6 +90,25 @@ function createWindow() {
         {
             label: 'Edit',
             submenu: [
+                {label: "Open",
+            click(){
+
+
+                let baseDir = path.join(__dirname, '/../fileoutput/');
+
+                fs.readFile(`${baseDir}testscripts.js`, 'utf8' , (err, data) => {
+                    if (err) {
+                    console.error(err)
+                        return
+                                }
+                    console.log(data)
+                            })
+
+
+
+
+
+            }},
                 { role: 'undo' },
                 { role: 'redo' },
                 { type: 'separator' },
@@ -113,7 +134,8 @@ function createWindow() {
             nodeIntegration: true,
             contextIsolation: false
         },
-        width: 800
+        width: 800,
+        icon: "./icons/logo.png"
     });
     // and load the index.html of the app.
     mainWindow.loadFile(path.join(__dirname, "../frontend/index.html"));

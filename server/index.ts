@@ -1,114 +1,130 @@
 import { app, BrowserWindow, ipcMain, Menu } from "electron";
 import * as path from "path";
+var fs = require('fs');
 
 function createWindow() {
 
-  var menu = Menu.buildFromTemplate(
-    [
-      
-        
-      {
-        label: "File",
-        
-        submenu: [
-            { label: 'New File', submenu: [
-                    { label: "Javascript", submenu: [
-                      {
-                        label: "Node.JS File"
-                      },
-                      {
-                        label: "Web-based file"
-                      }
-                    ] },
-                    { label: "Web Types", submenu: [
-                            { label: "EJS" },
-                            { label: "HTML" }
-                        ] },
-                    { label: "Dunamis", submenu: [
-                        {label: "Blank File"},
-                        {label: "Function Template"}
-                    ] },
-                    { label: "Python", submenu:[
-                        {label: "Empty Class"},
-                        {label: "Empty Project"},
-                        {label: "Empty File"}
-                    ] },
-                    { label: "Julia", submenu:[
-                        {
-                            label: "Empty File"
-                        },
-                        {
-                            label: "Template File"
-                        },
-                        {
-                            label: "Template Project"
-                        }
-                    ] },
-                    { label: "Java", submenu: [
-                        {
-                            label: "Library Templates", submenu: [
+  function createWindow() {
+    var menu = Menu.buildFromTemplate([
+        {
+            label: "File",
+            submenu: [
+                { label: 'New File', submenu: [
+                        { label: "Javascript", submenu: [
                                 {
-                                    label: "JFrame"
+                                    label: "Node.JS File"
+                                },
+                                {
+                                    label: "Web-based file"
                                 }
+                            ] },
+                        { label: "Web Types", submenu: [
+                                { label: "EJS" },
+                                { label: "HTML" }
+                            ] },
+                        { label: "Dunamis", submenu: [
+                                { label: "Blank File" },
+                                { label: "Function Template" }
+                            ] },
+                        { label: "Python", submenu: [
+                                { label: "Empty Class" },
+                                { label: "Empty Project" },
+                                { label: "Empty File" }
+                            ] },
+                        { label: "Julia", submenu: [
+                                {
+                                    label: "Empty File"
+                                },
+                                {
+                                    label: "Template File"
+                                },
+                                {
+                                    label: "Template Project"
+                                }
+                            ] },
+                        { label: "Java", submenu: [
+                                {
+                                    label: "Library Templates", submenu: [
+                                        {
+                                            label: "JFrame"
+                                        }
+                                    ]
+                                },
+                                {
+                                    label: "Empty Class"
+                                }
+                            ] },
+                        { label: "C#", submenu: [
+                                {
+                                    label: "Empty File"
+                                },
+                                {
+                                    label: "Empty Class"
+                                }
+                            ] },
+                        { label: "C++", submenu: [
+                                {
+                                    label: "Empty File"
+                                },
+                                {
+                                    label: "Empty Class"
+                                }
+                            ] }
+                    ]
+                },
+                {
+                    label: "Generate", submenu: [
+                        {
+                            label: "Makefile", submenu: [
+                                { label: "gcc" },
+                                { label: "g++" }
                             ]
                         },
                         {
-                            label: "Empty Class"
+                            label: "Zeno Folder"
                         }
-                    ] },
-                    { label: "C#", submenu: [
-                      {
-                        label: "Empty File"
-                      },
-                      {
-                        label: "Empty Class"
-                      }
-                    ] },
-                    { label: "C++", submenu:[
-                      {
-                        label: "Empty File"
-                      },
-                      {
-                        label: "Empty Class"
-                      }
-                    ] }
-                ]
-              
-            },
-            {
-              label: "Generate", submenu:[
-                {
-                  label: "Makefile", submenu:[
-                    { label: "gcc" },
-                    { label: "g++" }
-                  ]  
-                },
-                {
-                  label: "Zeno Folder"
+                    ]
                 }
             ]
-            }
-             
-        ]
-        
-    },
-    {
-      label: 'Edit',
-      submenu: [
-        { role: 'undo' },
-        { role: 'redo' },
-        { type: 'separator' },
-        { role: 'cut' },
-        { role: 'copy' },
-        { role: 'paste' },
-          { role: 'pasteAndMatchStyle' },
-          { role: 'delete' },
-          { role: 'selectAll' },
-          { type: 'separator' },
-          { role: 'delete' },
-          { type: 'separator' },
-          { role: 'selectAll' }
-      ]}])
+        },
+        {
+            label: 'Edit',
+            submenu: [
+                {label: "Open",
+            click(){
+
+
+                let baseDir = path.join(__dirname, '/../fileoutput/');
+
+                fs.readFile(`${baseDir}testscripts.js`, 'utf8' , (err, data) => {
+                    if (err) {
+                    console.error(err)
+                        return
+                                }
+                    console.log(data)
+                            })
+
+
+
+
+
+            }},
+                { role: 'undo' },
+                { role: 'redo' },
+                { type: 'separator' },
+                { role: 'cut' },
+                { role: 'copy' },
+                { role: 'paste' },
+                { role: 'pasteAndMatchStyle' },
+                { role: 'delete' },
+                { role: 'selectAll' },
+                { type: 'separator' },
+                { role: 'delete' },
+                { type: 'separator' },
+                { role: 'selectAll' }
+            ]
+        }
+    ]);
 
     Menu.setApplicationMenu(menu);
 
@@ -143,7 +159,7 @@ app.on("ready", () => {
     if (BrowserWindow.getAllWindows().length === 0) createWindow();
   });
 });
-
+}
 // Quit when all windows are closed, except on macOS. There, it's common
 // for applications and their menu bar to stay active until the user quits
 // explicitly with Cmd + Q.
