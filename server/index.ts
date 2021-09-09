@@ -9,6 +9,7 @@ function createWindow() {
         
       {
         label: "File",
+        
         submenu: [
             { label: 'New File', submenu: [
                     { label: "Javascript", submenu: [
@@ -72,11 +73,42 @@ function createWindow() {
                       }
                     ] }
                 ]
+              
+            },
+            {
+              label: "Generate", submenu:[
+                {
+                  label: "Makefile", submenu:[
+                    { label: "gcc" },
+                    { label: "g++" }
+                  ]  
+                },
+                {
+                  label: "Zeno Folder"
+                }
+            ]
             }
+             
         ]
-    }
-      
-    ])
+        
+    },
+    {
+      label: 'Edit',
+      submenu: [
+        { role: 'undo' },
+        { role: 'redo' },
+        { type: 'separator' },
+        { role: 'cut' },
+        { role: 'copy' },
+        { role: 'paste' },
+          { role: 'pasteAndMatchStyle' },
+          { role: 'delete' },
+          { role: 'selectAll' },
+          { type: 'separator' },
+          { role: 'delete' },
+          { type: 'separator' },
+          { role: 'selectAll' }
+      ]}])
 
     Menu.setApplicationMenu(menu);
 
