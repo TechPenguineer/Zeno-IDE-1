@@ -6,7 +6,6 @@ var path = require("path");
 var fs = require('fs');
 
 
-const pathfile = "../fileoutput/result"
 
 
 function createWindow() {
@@ -97,8 +96,8 @@ function createWindow() {
             submenu: [
                 {label: "Open",
             click(){
-               
-               
+
+
                 let baseDir = path.join(__dirname, '/../fileoutput/');
 
                 fs.readFile(`${baseDir}testscripts.js`, 'utf8' , (err, data) => {
@@ -110,8 +109,8 @@ function createWindow() {
                             })
 
 
-                
-            
+
+
 
             }},
                 { role: 'undo' },
