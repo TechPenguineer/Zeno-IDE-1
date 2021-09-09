@@ -2,6 +2,12 @@
 exports.__esModule = true;
 var electron_1 = require("electron");
 var path = require("path");
+var fs = require('fs');
+
+
+const pathfile = "../fileoutput/result"
+
+
 function createWindow() {
     var menu = electron_1.Menu.buildFromTemplate([
         {
