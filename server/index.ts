@@ -5,22 +5,77 @@ function createWindow() {
 
   var menu = Menu.buildFromTemplate(
     [
+      
+        
       {
         label: "File",
         submenu: [
-          {label:'New File', submenu:[
-          {label:"JAVASCRIPT File"},
-          {label: "HTML File"},
-          {label: "DUNAMIS File"}, 
-          {label: "PYTHON File"}, 
-          {label: "JULIA File"}, 
-          {label: "JAVA File"}, 
-          {label: "C# File"}, 
-          {label: "C++ File"}]
-        }
-        
+            { label: 'New File', submenu: [
+                    { label: "Javascript", submenu: [
+                      {
+                        label: "Node.JS File"
+                      },
+                      {
+                        label: "Web-based file"
+                      }
+                    ] },
+                    { label: "Web Types", submenu: [
+                            { label: "EJS" },
+                            { label: "HTML" }
+                        ] },
+                    { label: "Dunamis", submenu: [
+                        {label: "Blank File"},
+                        {label: "Function Template"}
+                    ] },
+                    { label: "Python", submenu:[
+                        {label: "Empty Class"},
+                        {label: "Empty Project"},
+                        {label: "Empty File"}
+                    ] },
+                    { label: "Julia", submenu:[
+                        {
+                            label: "Empty File"
+                        },
+                        {
+                            label: "Template File"
+                        },
+                        {
+                            label: "Template Project"
+                        }
+                    ] },
+                    { label: "Java", submenu: [
+                        {
+                            label: "Library Templates", submenu: [
+                                {
+                                    label: "JFrame"
+                                }
+                            ]
+                        },
+                        {
+                            label: "Empty Class"
+                        }
+                    ] },
+                    { label: "C#", submenu: [
+                      {
+                        label: "Empty File"
+                      },
+                      {
+                        label: "Empty Class"
+                      }
+                    ] },
+                    { label: "C++", submenu:[
+                      {
+                        label: "Empty File"
+                      },
+                      {
+                        label: "Empty Class"
+                      }
+                    ] }
+                ]
+            }
         ]
-      }
+    }
+      
     ])
 
     Menu.setApplicationMenu(menu);

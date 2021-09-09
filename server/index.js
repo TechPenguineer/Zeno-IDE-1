@@ -9,14 +9,46 @@ function createWindow() {
             submenu: [
                 { label: 'New File', submenu: [
                         { label: "JAVASCRIPT File" },
-                        { label: "HTML File" },
-                        { label: "DUNAMIS File" },
-                        { label: "PYTHON File" },
-                        { label: "JULIA File" },
-                        { label: "JAVA File" },
+                        { label: "Web Types", submenu: [
+                                { label: "EJS" },
+                                { label: "HTML" }
+                            ] },
+                        { label: "Dunamis", submenu: [
+                                { label: "Blank File" },
+                                { label: "Function Template" }
+                            ] },
+                        { label: "Python", submenu: [
+                                { label: "Empty Class" },
+                                { label: "Empty Project" },
+                                { label: "Empty File" }
+                            ] },
+                        { label: "Julia", submenu: [
+                                {
+                                    label: "Empty File"
+                                },
+                                {
+                                    label: "Template File"
+                                },
+                                {
+                                    label: "Template Project"
+                                }
+                            ] },
+                        { label: "Java", submenu: [
+                                {
+                                    label: "Library Templates", submenu: [
+                                        {
+                                            label: "JFrame"
+                                        }
+                                    ]
+                                },
+                                {
+                                    label: "Empty Class"
+                                }
+                            ] },
                         { label: "C# File" },
                         { label: "C++ File" }
-                    ] }
+                    ]
+                }
             ]
         }
     ]);
@@ -52,7 +84,7 @@ electron_1.app.on("ready", function () {
 // for applications and their menu bar to stay active until the user quits
 // explicitly with Cmd + Q.
 electron_1.app.on("window-all-closed", function () {
-    if (process.platform !== "elle") {
+    if (process.platform !== "darwin") {
         electron_1.app.quit();
     }
 });
