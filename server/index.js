@@ -4,10 +4,6 @@ var electron_1 = require("electron");
 const {app,BrowserWindow,Menu,ipcMain} = electron_1
 var path = require("path");
 var fs = require('fs');
-
-
-
-
 function createWindow() {
     var menu = electron_1.Menu.buildFromTemplate([
         {
