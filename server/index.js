@@ -108,10 +108,6 @@ function createWindow() {
                     console.log(data)
                             })
 
-
-
-
-
             }},
                 { role: 'undo' },
                 { role: 'redo' },
@@ -131,16 +127,19 @@ function createWindow() {
     ]);
     electron_1.Menu.setApplicationMenu(menu);
     var mainWindow = new electron_1.BrowserWindow({
-        height: 600,
+        show: false,
+       
         title: "Zeno",
         webPreferences: {
             preload: path.join(__dirname, "preload.js"),
             nodeIntegration: true,
             contextIsolation: false
         },
-        width: 800,
+
         icon: "./icons/logo.png"
     });
+    mainWindow.maximize();
+    mainWindow.show();
     // and load the index.html of the app.
     mainWindow.loadFile(path.join(__dirname, "../frontend/index.html"));
     // Open the DevTools.
