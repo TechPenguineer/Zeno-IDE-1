@@ -43,9 +43,18 @@ function createWindow() {
         
        })
 
-    async function selectDirectory()
+    function selectDirectory()
     {
-        let filePaths = dialog.showOpenDialog(mainWindow, {properties:["openDirectory"],defaultPath:"./",title:"Zeno - Open Folder", buttonLabel: "Open Folder In Zeno"})
+        let flder;
+        flder= dialog.showOpenDialog(this,{properties:["openDirectory"],defaultPath:"./",title:"Zeno - Open Folder", buttonLabel: "Open Folder In Zeno"});
+
+        if(!flder)
+        {
+        } else{
+            console.log(flder)
+        }
+
+
 
     }
 
