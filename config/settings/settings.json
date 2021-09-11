@@ -1,0 +1,46 @@
+{
+    "file_associations":
+    {
+        "javascript": ".js",
+        "dunamis": ".dun",
+        "csharp": ".cs",
+        "cpp": ".cpp",
+        "ejs": ".ejs",
+        "python": ".py",
+        "julia": ".jl",
+        "java": ".java",
+        "makefile": "Makefile",
+        "docker": "Docker",
+        "perl": ".pl",
+        "php": ".php",
+        "ruby": ".rb",
+        "c": ".c"
+    },
+    "font": 
+    {
+        "font_size": 20,
+        "font_family": "Consolas",
+        "font_weight": "bold"
+    },
+    "editor":
+    {
+        "underline_unkown_keywords": true,
+        "indent_size": 4,
+        "cursor": "line",
+        "autoclose_brackets": true,
+        "syntax_highlighting": true,
+        "display_number_of_lines": true
+    },
+    "tree":
+    {
+        "enable_file_icons": true,
+        "enable_folder_icons": true
+    },
+    "advanced":
+    {
+        "use_lsp": true,
+        "save_cache": true,
+        "cache_ext": ".zch",
+        "encoding": "UTF-8"
+    }
+}
