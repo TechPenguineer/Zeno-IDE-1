@@ -1,0 +1,24 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "start:dev",
+			"problemMatcher": [],
+			"label": "npm: start:dev",
+			"detail": "electron server/index.js",
+			"group": "build"
+		},
+		{
+			"type": "npm",
+			"script": "build",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [],
+			"label": "npm: build",
+			"detail": "tsc ./server/index.ts && tsc ./server/preload.ts &&  tsc ./server/renderer.ts    "
+		}
+	]
+}
