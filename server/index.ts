@@ -55,8 +55,9 @@ function createWindow() {
                         fs.stat(data.filePaths[0].toString()+"\\"+file, function (err, stats) {
                             if (err)
                                 throw err;
+                                
                             if (stats.isFile()) {
-                                mainWindow.webContents.executeJavaScript(`var list_item = document.createElement('a'); list_item.classList.add("file_tree_item");  list_item.innerHTML = \`${file}\`; document.body.appendChild(list_item);`);
+                                mainWindow.webContents.executeJavaScript(`var div_item = document.getElementById("file_explorer"); var list_item = document.createElement('a'); list_item.classList.add("file_tree_item");  list_item.innerHTML = \`${file}\`; div_item.appendChild(list_item);`);
                             }
                         });
                     });
