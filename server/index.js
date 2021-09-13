@@ -7,6 +7,7 @@ var app = electron_1.app, BrowserWindow = electron_1.BrowserWindow, Menu = elect
 var path = require("path");
 var fs = require('fs');
 var contextMenu = require('electron-context-menu');
+var display_content_1 = require("../lib/display_content");
 var dir;
 function createWindow() {
     // Tabs
@@ -32,12 +33,10 @@ function createWindow() {
     });
     function selectDirectory() {
         var flder;
-        flder = electron_2.dialog.showOpenDialog(this, { properties: ["openDirectory"], defaultPath: "./", title: "Zeno - Open Folder", buttonLabel: "Open Folder In Zeno" });
-        if (!flder) {
-        }
-        else {
-            console.log(flder);
-        }
+        flder = electron_1.dialog.showOpenDialog(this, { properties: ["openDirectory"], defaultPath: "./", title: "Zeno - Open Folder", buttonLabel: "Open Folder In Zeno" }).then(function (data) {
+            console.log(data.filePaths);
+            (0, display_content_1.render_parent_files)(data.filePaths);
+        });
     }
     var menu = electron_1.Menu.buildFromTemplate([
         {

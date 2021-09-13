@@ -8,8 +8,8 @@ var app = electron_1.app, BrowserWindow = electron_1.BrowserWindow, Menu = elect
 var path = require("path");
 var fs = require('fs');
 var contextMenu = require('electron-context-menu');
-
-let dir;
+import { render_parent_files } from "../lib/display_content"
+    let dir;
 
 
 
@@ -43,21 +43,14 @@ function createWindow() {
         
        })
 
-    function selectDirectory()
-    {
+    function selectDirectory() {
         let flder;
-        flder= dialog.showOpenDialog(this,{properties:["openDirectory"],defaultPath:"./",title:"Zeno - Open Folder", buttonLabel: "Open Folder In Zeno"});
+        flder = electron_1.dialog.showOpenDialog(this, { properties: ["openDirectory"], defaultPath: "./", title: "Zeno - Open Folder", buttonLabel: "Open Folder In Zeno" }).then(data => {
+            console.log(data.filePaths);
+            render_parent_files(data.filePaths);
 
-        if(!flder)
-        {
-        } else{
-            console.log(flder)
-        }
-
-
-
+        })
     }
-
     var menu = electron_1.Menu.buildFromTemplate([
         {
             
