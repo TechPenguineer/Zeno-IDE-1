@@ -7,7 +7,6 @@ var app = electron_1.app, BrowserWindow = electron_1.BrowserWindow, Menu = elect
 var path = require("path");
 var fs = require('fs');
 var contextMenu = require('electron-context-menu');
-var display_content_1 = require("../lib/display_content");
 var dir;
 function createWindow() {
     // Tabs
@@ -19,7 +18,7 @@ function createWindow() {
             nodeIntegration: true,
             contextIsolation: false
         },
-        icon: "./icons/logo.png"
+        icon: "./icons/larger_icon.png"
     });
     var options = electron_2.dialog.showOpenDialog({
         // See place holder 1 in above image
@@ -31,11 +30,27 @@ function createWindow() {
         // See place holder 4 in above image
         properties: ["openDirectory"]
     });
+    function render_parent_files(dir) {
+        try {
+            fs.readdirSync(dir).filter(function files() {
+                fs.stat(files, function (err, stats) {
+                    if (err)
+                        throw err;
+                    if (stats.isFile(files)) {
+                        mainWindow.webContents.executeJavaScript("var list_item = document.createElement('a'); list_item.innerHTML = '' + files; document.body.appendChild(list_item);");
+                    }
+                });
+            });
+        }
+        catch (e) {
+            console.log(e);
+        }
+    }
     function selectDirectory() {
         var flder;
         flder = electron_1.dialog.showOpenDialog(this, { properties: ["openDirectory"], defaultPath: "./", title: "Zeno - Open Folder", buttonLabel: "Open Folder In Zeno" }).then(function (data) {
-            console.log(data.filePaths);
-            (0, display_content_1.render_parent_files)(data.filePaths);
+            console.log(data.filePaths[0]);
+            render_parent_files(data.filePaths.toString());
         });
     }
     var menu = electron_1.Menu.buildFromTemplate([

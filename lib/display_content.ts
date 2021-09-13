@@ -16,7 +16,7 @@ export function render_parent_files(dir)
                     let list_item = document.createElement('a');
                     list_item.innerHTML = `${files}`;
                     list_item.className = "file_list_item";
-                    document.appendChild(list_item)
+                    global.document.appendChild(list_item)
                 }
             })
 
@@ -28,5 +28,3 @@ export function render_parent_files(dir)
         console.log(e);
     }
 }
-
-module.exports = { render_parent_directories }
