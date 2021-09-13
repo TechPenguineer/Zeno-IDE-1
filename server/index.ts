@@ -45,9 +45,14 @@ function createWindow() {
        
     }
     function selectDirectory() {
+             
+
+                // READS AND ADDS FILES TO TREE
         let flder;
         flder = electron_1.dialog.showOpenDialog(this, { properties: ["openDirectory"], defaultPath: "./", title: "Zeno - Open Folder", buttonLabel: "Open Folder In Zeno" }).then(data => {
             console.log(data.filePaths.toString());
+               // REMOVES EXISTING FILES FROM TREE
+               mainWindow.webContents.executeJavaScript("var paras = document.getElementsByClassName('file_tree_item'); while(paras[0]){ paras[0].parentNode.removeChild(paras[0])}");
             try {
                 fs.readdir(data.filePaths[0].toString(),(err, files)=>{
                     files.forEach(file => {
