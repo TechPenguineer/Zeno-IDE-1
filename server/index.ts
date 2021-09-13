@@ -41,27 +41,31 @@ function createWindow() {
         properties: ["openDirectory"]
         
        })
-       function render_parent_files(dir) {
-        try {
-            fs.readdirSync(dir).filter(function files() {
-                fs.stat(files, function (err, stats) {
-                    if (err)
-                        throw err;
-                    if (stats.isFile(files)) {
-                        mainWindow.webContents.executeJavaScript("var list_item = document.createElement('a'); list_item.innerHTML = '' + files; document.body.appendChild(list_item);");
-                    }
-                });
-            });
-        }
-        catch (e) {
-            console.log(e);
-        }
+       function render_parent_files( dir ) {
+       
     }
     function selectDirectory() {
         let flder;
         flder = electron_1.dialog.showOpenDialog(this, { properties: ["openDirectory"], defaultPath: "./", title: "Zeno - Open Folder", buttonLabel: "Open Folder In Zeno" }).then(data => {
-            console.log(data.filePaths[0]);
-            render_parent_files(data.filePaths.toString())
+            console.log(data.filePaths.toString());
+            try {
+                fs.readdir(data.filePaths[0].toString(),(err, files)=>{
+                    files.forEach(file => {
+                        console.log(file)
+                        fs.stat(data.filePaths[0].toString()+"\\"+file, function (err, stats) {
+                            if (err)
+                                throw err;
+                            if (stats.isFile()) {
+                                mainWindow.webContents.executeJavaScript(`var list_item = document.createElement('a'); list_item.classList.add("file_tree_item");  list_item.innerHTML = \`${file}\`; document.body.appendChild(list_item);`);
+                            }
+                        });
+                    });
+            
+                });
+            }
+            catch (e) {
+                console.log(e);
+            }
         })
     }
     var menu = electron_1.Menu.buildFromTemplate([
