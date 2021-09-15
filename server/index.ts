@@ -60,11 +60,20 @@ function createWindow() {
                         fs.stat(data.filePaths[0].toString()+"\\"+file, function (err, stats) {
                             if (err)
                                 throw err;
+
+                            // GETS FILES
                             if (stats.isFile()) {
                                 let extention = path.extname(file);
                                 console.log(extention);
-                                mainWindow.webContents.executeJavaScript(`var div_item = document.getElementById("file_explorer"); var list_item = document.createElement('a'); var img_icon = document.createElement('img'); img_icon.src = "../icons/languages/file.png"; list_item.classList.add("file_tree_item"); list_item.innerHTML = \`${file}\`; div_item.appendChild(list_item);    var tree_item document.getElementsByClassName("file_tree_item"); tree_item.appendChild(img_icon);`);
+                                mainWindow.webContents.executeJavaScript(`var div_item = document.getElementById("file_explorer"); var list_item = document.createElement('a'); var img_icon = document.createElement('img'); img_icon.src = "../icons/languages/file.png"; list_item.classList.add("file_tree_item"); list_item.innerHTML = \`${file}\`; div_item.appendChild(list_item);`);
                             }
+                            else 
+
+                            // GETS DIRECTORIES
+                            if (stats.isDirectory()) {
+                                 mainWindow.webContents.executeJavaScript("var div_item = document.getElementById('file_explorer'); var list_item = document.createElement('a'); var img_icon = document.createElement('img'); img_icon.src = '../icons/languages/file.png'; list_item.classList.add('file_tree_item'); list_item.innerHTML = `\&#8627;" + file +`; div_item.appendChild(list_item);`);
+                                }
+                        
                         });
                     });
             
