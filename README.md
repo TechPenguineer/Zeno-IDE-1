@@ -36,8 +36,13 @@ Zeno INC. Founded in 2021 by developer Tech Penguineer And Pure Voidy, its a pro
 # Project
 ## Project Status
 - Developer Recruitment - ✔️
+- Electron Server - ✔️
 - Logo design - ✔️
+- Styling/bootstaps - 50/50
+- File Reader - ✔️
 - Main Software - ⌛
+- LSP - ⌛
+- Syntax Highlighting - ⌛
 <br>
 
 # Contributors
