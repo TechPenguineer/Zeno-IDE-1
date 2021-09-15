@@ -27,7 +27,7 @@
  Zeno is an open source IDE with a Language Protocol Server, customizable ui, plugins, plugin builders **(PRO FEATURE)** where you can write, and collaborate on code!
 
 ## What is an IDE?
-An ide is a integrated development environment. This is basically a file/text editor with other features! 
+An ide is a integrated development environment. This is basically a file/text editor with other features! Our IDE is special because of the improved features from regular ones!
 
 ## Who is Zeno INC?
 Zeno INC. Founded in 2021 by developer Tech Penguineer And Pure Voidy, its a professional software development organization where developers come together to make life easier for other programmers.
